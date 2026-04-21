@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aurora Skincare | Guía para Piel Sensible · Farmatodo Venezuela</title>
+  <meta name="description" content="Aurora Skincare: guía completa de skincare para piel sensible con productos Farmatodo Venezuela.">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--terra:#B35D3A;--terra-l:#D98E6A;--barro:#8C4A2C;--arena:#F5ECE3;--arena2:#EDE3D8;--cream:#FEFAF5;--texto:#3A2C25;--gris:#E8DDD2;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--arena);color:var(--texto);font-family:'Inter',sans-serif;overflow-x:hidden;}
+    h1,h2,h3,.logo-text{font-family:'Playfair Display',serif;}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(245,236,227,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(139,69,19,.12);padding:.8rem 2rem;}
+    .nav-inner{display:flex;justify-content:space-between;align-items:center;max-width:1280px;margin:0 auto;}
+    .logo{display:flex;align-items:center;gap:8px;text-decoration:none;}
+    .logo-text{font-size:1.3rem;font-weight:600;font-style:italic;color:var(--terra);}
+    .nav-menu{display:flex;gap:1.8rem;list-style:none;}
+    .nav-menu a{text-decoration:none;color:var(--barro);font-size:.78rem;font-weight:500;letter-spacing:.8px;text-transform:uppercase;transition:color .2s;}
+    .nav-menu a:hover{color:var(--terra);}
+    .btn-wa-nav{background:var(--terra);color:#fff!important;padding:5px 16px;border-radius:40px;}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;}
+    .hamburger span{width:24px;height:2px;background:var(--terra);border-radius:2px;display:block;}
+    .mobile-panel{position:fixed;top:0;right:-100%;width:75%;max-width:300px;height:100%;background:var(--cream);z-index:300;padding:5rem 2rem;transition:.3s;box-shadow:-4px 0 20px rgba(0,0,0,.1);}
+    .mobile-panel a{display:block;padding:.9rem 0;border-bottom:1px solid var(--gris);color:var(--barro);text-decoration:none;font-weight:500;font-size:.95rem;}
+    .mobile-close{position:absolute;top:1.2rem;right:1.5rem;font-size:1.5rem;cursor:pointer;background:none;border:none;color:var(--barro);}
+
+    /* HERO */
+    .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 20px 60px;background:linear-gradient(135deg,#F2E5DA,#E8D9CC);position:relative;overflow:hidden;}
+    .hd{position:absolute;border-radius:50%;pointer-events:none;}
+    .hd1{width:600px;height:600px;top:-150px;right:-150px;background:radial-gradient(circle,rgba(179,93,58,.12),transparent 60%);}
+    .hd2{width:400px;height:400px;bottom:-100px;left:-100px;background:radial-gradient(circle,rgba(140,74,44,.09),transparent 60%);}
+    .hero-box{position:relative;z-index:2;background:rgba(255,250,240,.93);backdrop-filter:blur(6px);padding:2.5rem 3rem;border-radius:36px;box-shadow:0 20px 50px rgba(0,0,0,.07);max-width:660px;width:100%;}
+    .hero-tag{font-size:.68rem;letter-spacing:3px;text-transform:uppercase;color:var(--barro);margin-bottom:.5rem;}
+    .hero-box h1{font-size:clamp(3rem,8vw,5.5rem);color:var(--terra);line-height:1;}
+    .hero-desc{font-size:.9rem;color:#5A3E2E;line-height:1.7;margin:1rem 0 1.5rem;}
+    .hero-pills{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-bottom:2rem;}
+    .pill{background:var(--arena2);color:var(--barro);padding:.35rem 1rem;border-radius:100px;font-size:.75rem;font-weight:500;}
+    .hero-btns{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;}
+    .btn-primary{background:var(--terra);color:#fff;padding:.75rem 1.8rem;border-radius:40px;text-decoration:none;font-weight:600;font-size:.85rem;transition:.2s;}
+    .btn-primary:hover{background:var(--barro);}
+    .btn-outline{background:transparent;color:var(--terra);border:2px solid var(--terra);padding:.75rem 1.8rem;border-radius:40px;text-decoration:none;font-weight:600;font-size:.85rem;transition:.2s;}
+    .btn-outline:hover{background:var(--terra);color:#fff;}
+
+    /* MARQUEE */
+    .marquee-bar{background:var(--barro);overflow:hidden;padding:.9rem 0;}
+    .marquee-inner{display:flex;gap:4rem;animation:marquee 22s linear infinite;white-space:nowrap;}
+    .marquee-inner span{font-size:.68rem;letter-spacing:3px;text-transform:uppercase;color:rgba(245,236,227,.75);flex-shrink:0;}
+    .marquee-inner span::before{content:'✦  ';opacity:.5;}
+    @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+    /* SECTION HEADER */
+    .sec-head{text-align:center;padding:4rem 1.5rem 2.5rem;}
+    .stag{font-size:.68rem;letter-spacing:3px;text-transform:uppercase;color:var(--terra);display:block;margin-bottom:.6rem;}
+    .sec-head h2{font-size:clamp(1.8rem,4vw,2.8rem);color:var(--barro);line-height:1.2;}
+    .sec-head p{font-size:.9rem;color:#7A5A46;margin-top:.6rem;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.8;}
+
+    /* WRAP */
+    .wrap{max-width:1280px;margin:0 auto;padding:0 20px;}
+
+    /* TIPOS DE PIEL */
+    .piel-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-bottom:4rem;}
+    .piel-card{background:var(--cream);border-radius:24px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.06);cursor:pointer;transition:.3s;}
+    .piel-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(0,0,0,.1);}
+    .piel-card img{width:100%;height:180px;object-fit:cover;display:block;transition:transform .4s;}
+    .piel-card:hover img{transform:scale(1.04);}
+    .piel-body{padding:1rem;text-align:center;}
+    .piel-badge{display:inline-block;background:var(--arena2);color:var(--barro);font-size:.6rem;letter-spacing:1px;padding:.2rem .7rem;border-radius:40px;margin-bottom:.4rem;text-transform:uppercase;font-weight:600;}
+    .piel-body strong{display:block;font-size:.95rem;color:var(--terra);margin-bottom:.2rem;}
+    .piel-body p{font-size:.75rem;color:#7A5A46;line-height:1.5;}
+    .click-hint{font-size:.62rem;color:var(--terra-l);margin-top:.4rem;display:block;}
+
+    /* 3 CLAVES */
+    .claves-section{background:var(--cream);padding:4rem 0;}
+    .claves-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+    .clave-card{border-radius:24px;overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.07);transition:.3s;}
+    .clave-card:hover{transform:translateY(-5px);}
+    .clave-img{position:relative;height:240px;overflow:hidden;}
+    .clave-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+    .clave-card:hover .clave-img img{transform:scale(1.05);}
+    .clave-num{position:absolute;top:14px;left:18px;font-family:'Playfair Display',serif;font-size:3.5rem;font-weight:700;color:rgba(255,255,255,.2);line-height:1;}
+    .clave-chip{position:absolute;bottom:12px;right:12px;background:var(--barro);color:#fff;font-size:.6rem;letter-spacing:1.5px;padding:.3rem .9rem;border-radius:40px;text-transform:uppercase;}
+    .clave-body{background:#fff;padding:1.8rem;}
+    .clave-step{font-size:.62rem;letter-spacing:2px;text-transform:uppercase;color:var(--terra);margin-bottom:.4rem;}
+    .clave-body h3{font-size:1.4rem;color:var(--barro);margin-bottom:.9rem;}
+    .accion{background:var(--arena);border-left:3px solid var(--terra);padding:.9rem 1.1rem;border-radius:0 10px 10px 0;margin-bottom:1rem;}
+    .accion-lbl{font-size:.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--terra);margin-bottom:.2rem;}
+    .accion p{font-size:.85rem;line-height:1.6;}
+    .vital{display:flex;gap:.9rem;align-items:flex-start;background:linear-gradient(135deg,rgba(179,93,58,.06),rgba(140,74,44,.03));padding:1rem;border-radius:14px;}
+    .vital-icon{font-size:1.6rem;flex-shrink:0;}
+    .vital-lbl{font-size:.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--terra);margin-bottom:.15rem;}
+    .vital h4{font-size:.9rem;color:var(--barro);margin-bottom:.2rem;}
+    .vital p{font-size:.82rem;line-height:1.7;color:#6A4A36;}
+
+    /* FARMATODO */
+    .farmatodo-section{padding:4rem 0;}
+    .ft-header{display:flex;align-items:center;gap:1rem;margin-bottom:2rem;flex-wrap:wrap;}
+    .ft-badge{background:var(--terra);color:#fff;padding:.45rem 1.1rem;border-radius:40px;font-size:.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;}
+    .ft-header h2{font-size:clamp(1.4rem,3vw,2rem);color:var(--barro);}
+    .prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.5rem;}
+    .prod-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,.06);transition:.3s;}
+    .prod-card:hover{transform:translateY(-5px);box-shadow:0 14px 36px rgba(0,0,0,.1);}
+    .prod-img{height:190px;background:var(--arena2);overflow:hidden;display:flex;align-items:center;justify-content:center;}
+    .prod-img img{width:100%;height:100%;object-fit:contain;padding:.8rem;transition:transform .4s;}
+    .prod-card:hover .prod-img img{transform:scale(1.05);}
+    .prod-body{padding:1.1rem;}
+    .prod-badge{background:var(--terra-l);color:#fff;font-size:.58rem;letter-spacing:1px;padding:.18rem .8rem;border-radius:40px;text-transform:uppercase;font-weight:600;}
+    .prod-body h3{font-size:.88rem;color:var(--barro);margin:.5rem 0 .25rem;line-height:1.3;}
+    .prod-body p{font-size:.75rem;color:#7A5A46;line-height:1.5;margin-bottom:.6rem;}
+    .prod-price{color:var(--terra);font-weight:700;font-size:.85rem;}
+    .prod-store{font-size:.65rem;color:#aaa;}
+    .prod-rating{font-size:.72rem;color:#f5a623;margin-top:.2rem;}
+
+    /* SOLUCIONES */
+    .sol-section{background:var(--barro);padding:4rem 0;}
+    .sol-section .sec-head h2{color:var(--arena);}
+    .sol-section .sec-head p{color:rgba(245,236,227,.65);}
+    .sol-section .stag{color:var(--terra-l);}
+    .sol-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;}
+    .sol-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:1.5rem;transition:.3s;}
+    .sol-card:hover{background:rgba(255,255,255,.14);transform:translateY(-3px);}
+    .sol-icon{font-size:2rem;margin-bottom:.8rem;}
+    .sol-card h3{font-size:1rem;color:var(--arena);margin-bottom:.8rem;}
+    .sol-card ul{list-style:none;display:flex;flex-direction:column;gap:.4rem;}
+    .sol-card ul li{font-size:.78rem;color:rgba(245,236,227,.7);padding-left:.9rem;position:relative;line-height:1.5;}
+    .sol-card ul li::before{content:'✦';position:absolute;left:0;color:var(--terra-l);font-size:.55rem;top:3px;}
+
+    /* GUÍAS COMPLETAS */
+    .guias-section{padding:4rem 0;background:var(--cream);}
+    .guias-tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem;}
+    .gtab{padding:.5rem 1.3rem;border-radius:40px;border:1.5px solid var(--gris);background:transparent;color:var(--barro);font-size:.78rem;font-weight:500;cursor:pointer;transition:.2s;font-family:'Inter',sans-serif;}
+    .gtab.active,.gtab:hover{background:var(--terra);color:#fff;border-color:var(--terra);}
+    .guia-content{display:none;}
+    .guia-content.active{display:block;}
+    .guia-box{background:#fff;border-radius:24px;padding:2rem;box-shadow:0 6px 20px rgba(0,0,0,.05);}
+    .guia-box h3{font-size:1.5rem;color:var(--terra);margin-bottom:1.5rem;}
+    .guia-pasos{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.2rem;margin-bottom:1.5rem;}
+    .guia-paso{background:var(--arena);border-radius:16px;padding:1.3rem;}
+    .guia-paso .paso-num{font-size:.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--terra);margin-bottom:.3rem;}
+    .guia-paso h4{font-size:1rem;color:var(--barro);margin-bottom:.5rem;}
+    .guia-paso p{font-size:.82rem;line-height:1.6;color:#6A4A36;}
+    .guia-paso .producto{margin-top:.6rem;background:rgba(179,93,58,.08);border-radius:8px;padding:.5rem .8rem;font-size:.75rem;color:var(--terra);font-weight:600;}
+    .guia-tip{background:linear-gradient(135deg,rgba(179,93,58,.08),rgba(140,74,44,.05));border-left:3px solid var(--terra);padding:1.2rem 1.5rem;border-radius:0 16px 16px 0;margin-top:1rem;}
+    .guia-tip strong{display:block;color:var(--terra);margin-bottom:.3rem;font-size:.85rem;}
+    .guia-tip p{font-size:.82rem;line-height:1.7;color:#6A4A36;}
+    .guia-evitar{margin-top:1rem;}
+    .guia-evitar strong{color:var(--terra);font-size:.85rem;}
+    .guia-evitar ul{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem;}
+    .guia-evitar ul li{background:#FFE8E0;color:#A33A1A;font-size:.72rem;padding:.25rem .8rem;border-radius:40px;}
+
+    /* RUTINA TIMELINE */
+    .rutina-section{padding:4rem 0;}
+    .timeline{display:flex;gap:0;position:relative;margin-top:3rem;}
+    .timeline::before{content:'';position:absolute;top:40px;left:0;right:0;height:2px;background:var(--gris);}
+    .tl-item{flex:1;text-align:center;padding:0 1rem;position:relative;}
+    .tl-dot{width:80px;height:80px;border-radius:50%;background:var(--arena2);border:2px solid var(--gris);display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem;font-size:1.8rem;position:relative;z-index:1;transition:.3s;}
+    .tl-item:hover .tl-dot{background:var(--terra);border-color:var(--terra);}
+    .tl-lbl{font-size:.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--terra);margin-bottom:.3rem;}
+    .tl-item h3{font-size:.95rem;color:var(--barro);margin-bottom:.4rem;}
+    .tl-item p{font-size:.78rem;color:#7A5A46;line-height:1.6;}
+
+    /* FORMULARIO WA */
+    .form-section{padding:4rem 0;background:var(--terra);}
+    .form-box{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;}
+    .form-left h2{font-size:clamp(1.6rem,3vw,2.2rem);color:#fff;margin-bottom:.8rem;}
+    .form-left p{font-size:.88rem;color:rgba(255,255,255,.8);line-height:1.8;}
+    .form-fields{display:flex;flex-direction:column;gap:.9rem;}
+    .form-fields input,.form-fields select{padding:.9rem 1.3rem;border:none;border-radius:40px;background:rgba(255,255,255,.15);color:#fff;font-family:'Inter',sans-serif;font-size:.88rem;outline:none;}
+    .form-fields input::placeholder{color:rgba(255,255,255,.55);}
+    .form-fields select{color:rgba(255,255,255,.8);}
+    .form-fields select option{color:var(--texto);background:#fff;}
+    .btn-send{background:#fff;color:var(--terra);border:none;padding:.9rem;border-radius:40px;font-weight:700;font-size:.9rem;cursor:pointer;transition:.2s;display:flex;align-items:center;justify-content:center;gap:.5rem;}
+    .btn-send:hover{background:var(--arena);transform:translateY(-2px);}
+    #feedback{text-align:center;color:#fff;font-size:.85rem;min-height:1.5rem;}
+
+    /* CONTACTO */
+    .contacto{background:#1a0f0a;padding:3.5rem 0;text-align:center;}
+    .contacto h2{color:var(--arena);font-size:1.8rem;margin-bottom:.6rem;}
+    .contacto p{color:rgba(245,236,227,.55);margin-bottom:1.5rem;font-size:.88rem;}
+    .btn-wa-big{background:#25D366;color:#fff;padding:.9rem 2.2rem;border-radius:60px;text-decoration:none;font-weight:700;font-size:.95rem;display:inline-block;transition:.2s;}
+    .btn-wa-big:hover{background:#1db954;transform:translateY(-3px);}
+
+    /* FOOTER */
+    footer{background:#0f0805;color:rgba(245,236,227,.35);text-align:center;padding:1.8rem;font-size:.75rem;}
+
+    /* WA FLOAT */
+    .wa-float{position:fixed;bottom:22px;left:22px;background:#25D366;color:#fff;padding:10px 20px;border-radius:50px;font-weight:700;text-decoration:none;z-index:99;box-shadow:0 3px 14px rgba(0,0,0,.2);transition:.2s;font-size:.85rem;}
+    .wa-float:hover{background:#1db954;transform:translateY(-3px);}
+
+    /* MODAL */
+    .modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.8);z-index:1000;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:.3s;padding:1rem;}
+    .modal.open{opacity:1;visibility:visible;}
+    .modal-box{background:#fff;border-radius:28px;padding:2rem;max-width:540px;width:100%;position:relative;max-height:90vh;overflow-y:auto;}
+    .modal-close{position:absolute;top:1rem;right:1.2rem;font-size:1.4rem;cursor:pointer;color:#999;background:none;border:none;}
+    .modal-box h2{font-size:1.4rem;color:var(--terra);margin-bottom:1rem;}
+    .modal-box ul{padding-left:1.1rem;margin:.7rem 0;}
+    .modal-box ul li{margin:.35rem 0;font-size:.85rem;line-height:1.6;}
+    .modal-tip{background:var(--arena);padding:.9rem 1.1rem;border-radius:12px;font-size:.8rem;line-height:1.6;margin-top:.9rem;border-left:3px solid var(--terra);}
+    .modal-btn{margin-top:1.2rem;background:var(--terra);color:#fff;border:none;padding:.7rem 1.8rem;border-radius:40px;cursor:pointer;font-weight:600;font-size:.85rem;}
+
+    /* REVEAL */
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease;}
+    .revealed{opacity:1;transform:translateY(0);}
+
+    /* RESPONSIVE */
+    @media(max-width:900px){
+      .nav-menu{display:none;}
+      .hamburger{display:flex;}
+      .piel-grid{grid-template-columns:1fr 1fr;}
+      .claves-grid{grid-template-columns:1fr;}
+      .sol-grid{grid-template-columns:1fr 1fr;}
+      .timeline{flex-direction:column;gap:1.5rem;}
+      .timeline::before{display:none;}
+      .form-box{grid-template-columns:1fr;}
+      .hero-box{padding:2rem 1.5rem;}
+      .guia-pasos{grid-template-columns:1fr;}
+    }
+    @media(max-width:560px){
+      .piel-grid{grid-template-columns:1fr 1fr;}
+      .sol-grid{grid-template-columns:1fr;}
+      .prod-grid{grid-template-columns:1fr 1fr;}
+    }
+    @media(max-width:400px){
+      .prod-grid{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="#">
+      <svg width="36" height="36" viewBox="0 0 60 60" fill="none">
+        <path d="M44 30C44 17 34 8 21 10C29 14 34 22 34 30C34 43 24 52 11 50C17 55 26 57 34 54C42 50 44 40 44 30Z" stroke="#B35D3A" stroke-width="2.2"/>
+        <path d="M34 30C34 38 29 46 21 48" stroke="#D98E6A" stroke-width="2"/>
+        <ellipse cx="29" cy="21" rx="4" ry="6" fill="#D98E6A"/>
+      </svg>
+      <span class="logo-text">Aurora Skincare</span>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="#tipos-piel">🌸 Tu Piel</a></li>
+      <li><a href="#claves">✦ Las 3 Claves</a></li>
+      <li><a href="#guias">📘 Guías</a></li>
+      <li><a href="#farmatodo">🧴 Farmatodo</a></li>
+      <li><a href="#contacto" class="btn-wa-nav">💬 WhatsApp</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-panel" id="mobilePanel">
+  <button class="mobile-close" id="mobileClose">✕</button>
+  <a href="#tipos-piel">🌸 Tu Piel</a>
+  <a href="#claves">✦ Las 3 Claves</a>
+  <a href="#guias">📘 Guías Completas</a>
+  <a href="#farmatodo">🧴 Farmatodo</a>
+  <a href="#contacto">💬 WhatsApp Daniela</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hd hd1"></div>
+  <div class="hd hd2"></div>
+  <div class="hero-box">
+    <div class="hero-tag">GUÍA DIGITAL DE SKINCARE · AURORA</div>
+    <h1>AURORA</h1>
+    <div class="hero-tag" style="margin-top:.3rem;">PARA PIEL SENSIBLE</div>
+    <p class="hero-desc">Mujeres 38–45 años · Soluciones reales · Claridad y calma.<br>Productos disponibles en <strong>Farmatodo Venezuela</strong>.</p>
+    <div class="hero-pills">
+      <span class="pill">🌿 Sin promesas vacías</span>
+      <span class="pill">🔬 Ciencia sencilla</span>
+      <span class="pill">🛒 Farmatodo VE</span>
+      <span class="pill">🌙 Piel sensible</span>
+    </div>
+    <div class="hero-btns">
+      <a href="#guias" class="btn-primary">📘 Ver guías completas</a>
+      <a href="#tipos-piel" class="btn-outline">🌸 Conoce tu piel</a>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-bar">
+  <div class="marquee-inner">
+    <span>Limpieza</span><span>Hidratación</span><span>Protección Solar</span><span>Farmatodo Venezuela</span><span>Piel Sensible</span><span>Rutina Clara</span><span>Renovación Real</span><span>Sin Complicaciones</span>
+    <span>Limpieza</span><span>Hidratación</span><span>Protección Solar</span><span>Farmatodo Venezuela</span><span>Piel Sensible</span><span>Rutina Clara</span><span>Renovación Real</span><span>Sin Complicaciones</span>
+  </div>
+</div>
+
+<!-- TIPOS DE PIEL -->
+<section id="tipos-piel">
+  <div class="sec-head reveal">
+    <span class="stag">Paso 0 — Conócete</span>
+    <h2>¿Cuál es tu tipo de piel?</h2>
+    <p>Toca cada card para ver tu guía personalizada completa.</p>
+  </div>
+  <div class="wrap">
+    <div class="piel-grid">
+      <div class="piel-card reveal" data-tipo="seca">
+        <img src="https://images.pexels.com/photos/6621462/pexels-photo-6621462.jpeg?auto=compress&cs=tinysrgb&w=500&h=380&fit=crop" alt="Piel seca" loading="lazy"/>
+        <div class="piel-body">
+          <span class="piel-badge">🌾 Piel Seca</span>
+          <strong>Piel Seca</strong>
+          <p>Tirantez, descamación y falta de luminosidad.</p>
+          <span class="click-hint">👆 Toca para ver tu guía</span>
+        </div>
+      </div>
+      <div class="piel-card reveal" data-tipo="grasa">
+        <img src="https://images.pexels.com/photos/3764014/pexels-photo-3764014.jpeg?auto=compress&cs=tinysrgb&w=500&h=380&fit=crop" alt="Piel grasa" loading="lazy"/>
+        <div class="piel-body">
+          <span class="piel-badge">🍃 Piel Grasa</span>
+          <strong>Piel Grasa</strong>
+          <p>Brillo excesivo, poros visibles, tendencia a granitos.</p>
+          <span class="click-hint">👆 Toca para ver tu guía</span>
+        </div>
+      </div>
+      <div class="piel-card reveal" data-tipo="mixta">
+        <img src="https://images.pexels.com/photos/3997989/pexels-photo-3997989.jpeg?auto=compress&cs=tinysrgb&w=500&h=380&fit=crop" alt="Piel mixta" loading="lazy"/>
+        <div class="piel-body">
+          <span class="piel-badge">🌸 Piel Mixta</span>
+          <strong>Piel Mixta</strong>
+          <p>Zona T grasa y mejillas secas. Rutina dual.</p>
+          <span class="click-hint">👆 Toca para ver tu guía</span>
+        </div>
+      </div>
+      <div class="piel-card reveal" data-tipo="sensible">
+        <img src="https://images.pexels.com/photos/3845457/pexels-photo-3845457.jpeg?auto=compress&cs=tinysrgb&w=500&h=380&fit=crop" alt="Piel sensible" loading="lazy"/>
+        <div class="piel-body">
+          <span class="piel-badge">🌙 Piel Sensible</span>
+          <strong>Piel Sensible</strong>
+          <p>Rojeces, ardor y reactividad a productos.</p>
+          <span class="click-hint">👆 Toca para ver tu guía</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LAS 3 CLAVES -->
+<section class="claves-section" id="claves">
+  <div class="sec-head reveal">
+    <span class="stag">El método Aurora</span>
+    <h2>Las 3 Claves del Skincare</h2>
+    <p>Tres pasos bien hechos transforman tu piel. Nada más.</p>
+  </div>
+  <div class="wrap">
+    <div class="claves-grid">
+      <div class="clave-card reveal">
+        <div class="clave-img">
+          <img src="https://images.pexels.com/photos/3757942/pexels-photo-3757942.jpeg?auto=compress&cs=tinysrgb&w=700&q=80" alt="Limpieza" loading="lazy"/>
+          <div class="clave-num">01</div>
+          <div class="clave-chip">Mañana & Noche</div>
+        </div>
+        <div class="clave-body">
+          <div class="clave-step">Paso 1 de 3</div>
+          <h3>Limpieza</h3>
+          <div class="accion"><div class="accion-lbl">✦ Acción</div><p>Lava tu rostro con <strong>agua tibia</strong> y un <strong>limpiador suave</strong> — mañana y noche.</p></div>
+          <div class="vital"><div class="vital-icon">🧖‍♀️</div><div><div class="vital-lbl">Por qué es vital</div><h4>Elimina el "ruido"</h4><p>Quita sudor, grasa y bacterias para que los productos penetren mejor.</p></div></div>
+        </div>
+      </div>
+      <div class="clave-card reveal">
+        <div class="clave-img">
+          <img src="https://images.pexels.com/photos/6621461/pexels-photo-6621461.jpeg?auto=compress&cs=tinysrgb&w=700&q=80" alt="Hidratación" loading="lazy"/>
+          <div class="clave-num">02</div>
+          <div class="clave-chip">Según tu piel</div>
+        </div>
+        <div class="clave-body">
+          <div class="clave-step">Paso 2 de 3</div>
+          <h3>Hidratación</h3>
+          <div class="accion"><div class="accion-lbl">✦ Acción</div><p>Aplica <strong>crema o gel hidratante</strong> según tu tipo de piel, justo después de limpiar.</p></div>
+          <div class="vital"><div class="vital-icon">💧</div><div><div class="vital-lbl">Por qué es vital</div><h4>Repara la barrera</h4><p>Mantiene el agua dentro y los irritantes fuera. Piel más elástica y menos irritada.</p></div></div>
+        </div>
+      </div>
+      <div class="clave-card reveal">
+        <div class="clave-img">
+          <img src="https://images.pexels.com/photos/3762879/pexels-photo-3762879.jpeg?auto=compress&cs=tinysrgb&w=700&q=80" alt="Protección solar" loading="lazy"/>
+          <div class="clave-num">03</div>
+          <div class="clave-chip">Cada mañana FPS 30+</div>
+        </div>
+        <div class="clave-body">
+          <div class="clave-step">Paso 3 de 3</div>
+          <h3>Protección Solar</h3>
+          <div class="accion"><div class="accion-lbl">✦ Acción</div><p>Aplica <strong>FPS 30 mínimo</strong> cada mañana — llueva, truene o haga nube.</p></div>
+          <div class="vital"><div class="vital-icon">☀️</div><div><div class="vital-lbl">Por qué es vital</div><h4>Previene el daño real</h4><p>Evita manchas, arrugas y enfermedades graves. El mejor antienvejecimiento.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUÍAS DEFINITIVAS -->
+<section class="guias-section" id="guias">
+  <div class="sec-head reveal">
+    <span class="stag">Guías Aurora Definitivas</span>
+    <h2>Tu rutina completa paso a paso</h2>
+    <p>Selecciona tu tipo de piel y obtén la guía completa con productos Farmatodo.</p>
+  </div>
+  <div class="wrap">
+    <div class="guias-tabs">
+      <button class="gtab active" data-guia="seca">🌾 Piel Seca</button>
+      <button class="gtab" data-guia="grasa">🍃 Piel Grasa</button>
+      <button class="gtab" data-guia="mixta">🌸 Piel Mixta</button>
+      <button class="gtab" data-guia="sensible">🌙 Piel Sensible</button>
+    </div>
+
+    <!-- GUÍA PIEL SECA -->
+    <div class="guia-content active" id="guia-seca">
+      <div class="guia-box">
+        <h3>🌾 Guía Definitiva — Piel Seca</h3>
+        <div class="guia-pasos">
+          <div class="guia-paso">
+            <div class="paso-num">🌅 Rutina de Mañana — Paso 1</div>
+            <h4>Limpieza Suave</h4>
+            <p>Lava con agua tibia (nunca caliente) y un limpiador sin sulfatos. No frotes, da golpecitos suaves. Máximo 60 segundos de limpieza.</p>
+            <div class="producto">🛒 Farmatodo: Jabón de Glicerina Natural · Bs 2.900</div>
+          </div>
+          <div class="guia-paso">
+            <div class="paso-num">🌅 Rutina de Mañana — Paso 2</div>
+            <h4>Hidratación Intensa</h4>
+            <p>Aplica con la piel aún húmeda. El Ácido Hialurónico necesita agua para funcionar. Aplica en movimientos hacia arriba y hacia fuera.</p>
+            <div class="producto">🛒 Farmatodo: Crema Ácido Hialurónico Cicatricure · Bs 4.200</div>
+          </div>
+          <div class="guia-paso">
+            <div class="paso-num">🌅 Rutina de Mañana — Paso 3</div>
+            <h4>Protección Solar</h4>
+            <p>Último paso, siempre. Usa un protector en crema (no gel) para piel seca. Aplica 15 minutos antes de salir. Reaaplica cada 2 horas si estás al sol.</p>
+            <div class="producto">🛒 Farmatodo: Neutrogena Ultra Sheer FPS 50 · Bs 4.800</div>
+          </div>
+          <div class="guia-paso">
+            <div class="paso-num">🌙 Rutina de Noche — Paso 1</div>
+            <h4>Doble Limpieza</h4>
+            <p>Primero un aceite o agua micelar para remover maquillaje y protector, luego el limpiador suave. La noche es cuando más suciedad acumulas.</p>
+            <div class="producto">🛒 Farmatodo: Jabón de Glicerina Natural · Bs 2.900</div>
+          </div>
+          <div class="guia-paso">
+            <div class="paso-num">🌙 Rutina de Noche — Paso 2</div>
+            <h4>Sérum Vitamina C (opcional)</h4>
+            <p>Aplica 2-3 gotitas en la piel limpia y seca. Espera 5 minutos antes de la crema. Ilumina y unifica el tono mientras duermes.</p>
+            <div class="producto">🛒 Farmatodo: Sérum Vitamina C L'Oreal · Bs 5.200</div>
+          </div>
+          <div class="guia-paso">
+            <div class="paso-num">🌙 Rutina de Noche — Paso 3</div>
+            <h4>Crema Nutritiva de Noche</h4>
+            <p>La crema nocturna es más densa. Aplica generosamente en cara y cuello. Sella toda la hidratación anterior. Tu piel se regenera mientras duermes.</p>
+            <div class="producto">🛒 Farmatodo: Crema Noche Colágeno + Ceramidas · Bs 3.100</div>
+          </div>
+        </div>
+        <div class="guia-tip">
+          <strong>💡 Tips Aurora para Piel Seca:</strong>
+          <p>Duerme con humidificador si puedes. Bebe mínimo 2 litros de agua al día. Nunca te laves la cara con agua caliente — abre los poros y elimina los aceites naturales. Exfolia máximo 1 vez por semana con exfoliante químico suave (láctico).</p>
+        </div>
+        <div class="guia-evitar">
+          <strong>❌ Evita en piel seca:</strong>
+          <ul><li>Jabones en barra</li><li>Agua muy caliente</li><li>Alcohol en tónicos</li><li>Exfoliantes físicos agresivos</li><li>Fragancias artificiales</li></ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- GUÍA PIEL GRASA -->
+    <div class="guia-content" id="guia-grasa">
+      <div class="guia-box">
+        <h3>🍃 Guía Definitiva — Piel Grasa</h3>
+        <div class="guia-pasos">
+          <div class="guia-paso">
+            <div class="paso-num">🌅 Rutina de Mañana — Paso 1</div>
+            <h4>Limpieza con Gel</h4>
+            <p>Usa un gel limpiador en espuma. Masajea 60 segundos y enjuaga con agua fresca (no caliente). La limpieza es la base de todo para piel grasa.</p>
+            <div class="producto">🛒 Farmatodo: Gel Limpiador Suave Pond's · Bs 3.200</div>
+          </div>
+          <div class="guia-paso">
+            <div class="paso-num">🌅 Rutina de Mañana — Paso 2</div>
+            <h4>Hidratación Ligera (sí, también)</h4>
+            <p>¡No omitas este paso! Piel grasa sin hidratación produce más sebo. Usa una textura gel-fluida, sin aceites. La Niacinamida regula el sebo naturalmente.</p>
+            <div class="producto">🛒 Farmatodo: Crema Ácido Hialurónico Cicatricure (gel) · Bs 4.200</div>
+          </div>
+          <div class="guia-paso">
+            <div class="paso-num">🌅 Rutina de Mañana — Paso 3</div>
+            <h4>Protector Toque Seco</h4>
+            <p>Busca fórmulas "toque seco", "oil-free" o "matte". Aplica con golpecitos, no frotes. Rota el protector para no acostumbrar la piel.</p>
+            <div class="producto">🛒 Farmatodo: Anasol FPS 50+ Toque Seco · Bs 3.500</div>
+          </div>
+          <div class="guia-paso">
+            <div class="paso-num">🌙 Rutina de Noche — Paso 1</div>
+            <h4>Doble Limpieza</h4>
+            <p>Primero agua micelar o aceite de jojoba para remover el protector y el sebo del día. Luego el gel limpiador. Este paso es crítico para piel grasa.</p>
+            <div class="producto">🛒 Farmatodo: Gel Limpiador Suave Pond's · Bs 3.200</div>
+          </div>
+          <div class="guia-paso">
+            <div class="paso-num">🌙 Rutina de Noche — Paso 2</div>
+            <h4>Niacinamida 10%</h4>
+            <p>Aplica el sérum de Niacinamida después de limpiar. Regula el sebo, minimiza poros y unifica el tono. Úsalo máximo 2 veces por semana al inicio.</p>
+            <div class="producto">🛒 Farmatodo: Sérum Vitamina C L'Oreal · Bs 5.200</div>
+          </div>
+          <div class="guia-paso">
+            <div class="paso-num">🌙 Rutina de Noche — Paso 3</div>
+            <h4>Hidratante Ligero de Noche</h4>
+            <p>Un gel hidratante ligero es suficiente. No necesitas crema densa. Tu piel produce suficientes aceites naturales durante la noche.</p>
+            <div class="producto">🛒 Farmatodo: NIVEA Sensitive (gel) · Bs 3.800</div>
+          </div>
+        </div>
+        <div class="guia-tip">
+          <strong>💡 Tips Aurora para Piel Grasa:</strong>
+          <p>Usa mascarilla de arcilla verde en zona T (nariz, frente, mentón) 2 veces por semana. No te toques la cara — las bacterias de las manos agravan el acné. Cambia la funda de almohada 2 veces por semana. La dieta alta en azúcar aumenta el sebo.</p>
+        </div>
+        <div class="guia-evitar">
+          <strong>❌ Evita en piel grasa:</strong>
+          <ul><li>Cremas densas o con aceites</li><li>Limpiar 3+ veces al día</li><li>Exfoliar todos los días</li><li>Tocar la cara constantemente</li><li>Protectores "aceite mineral"</li></ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- GUÍA PIEL MIXTA -->
+    <div class="guia-content" id="guia-mixta">
+      <div class="guia-box">
+        <h3>🌸 Guía Definitiva — Piel Mixta</h3>
+        <div class="guia-pasos">
+          <div class="guia-paso">
+            <div class="paso-num">🌅 Rutina de Mañana — Paso 1</div>
+            <h4>Limpieza Equilibrada</h4>
+            <p>Un limpiador en gel suave que limpie la zona T sin resecar las mejillas. Masajea con movimientos circulares. Agua fresca siempre.</p>
+            <div class="producto">🛒 Farmatodo: Gel Limpiador Suave Pond's · Bs 3.200</div>
+          </div>
+          <div class="guia-paso">
+            <div class="paso-num">🌅 Rutina de Mañana — Paso 2</div>
+            <h4>Hidratación Dual por Zonas</h4>
+            <p>Zona T (frente, nariz, mentón): gel hidratante ligero. Mejillas y contorno de ojos: crema más nutritiva. Tarda 2 minutos extra pero tu piel lo agradece.</p>
+            <div class="producto">🛒 Farmatodo: NIVEA Sensitive + Cicatricure (gel) · Bs 3.800</div>
+          </div>
+          <div class="guia-paso">
+            <div class="paso-num">🌅 Rutina de Mañana — Paso 3</div>
+            <h4>Protector Universal</h4>
+            <p>Un protector de textura fluida funciona en todas las zonas de la piel mixta. Aplica en toda la cara, no solo en la zona T.</p>
+            <div class="producto">🛒 Farmatodo: Neutrogena Ultra Sheer FPS 50 · Bs 4.800</div>
+          </div>
+          <div class="guia-paso">
+            <div class="paso-num">🌙 Rutina de Noche — Paso 1</div>
+            <h4>Doble Limpieza</h4>
+            <p>Agua micelar para remover protector y maquillaje. Luego el gel limpiador. Las mejillas también acumulan suciedad aunque no brillen.</p>
+            <div class="producto">🛒 Farmatodo: Jabón de Glicerina + Gel Pond's · Bs 2.900</div>
+          </div>
+          <div class="guia-paso">
+            <div class="paso-num">🌙 Rutina de Noche — Paso 2</div>
+            <h4>Mascarilla Semanal (zona T)</h4>
+            <p>2 veces por semana aplica mascarilla de arcilla SOLO en zona T por 10 minutos. Absorbe el exceso de sebo sin resecar las mejillas. Enjuaga con agua fresca.</p>
+            <div class="producto">🛒 Farmatodo: Consulta con Daniela · WhatsApp</div>
+          </div>
+          <div class="guia-paso">
+            <div class="paso-num">🌙 Rutina de Noche — Paso 3</div>
+            <h4>Hidratación Nocturna Dual</h4>
+            <p>Zona T: sérum ligero de Ácido Hialurónico. Mejillas: crema con ceramidas más nutritiva. Aplica el sérum primero, luego la crema en mejillas.</p>
+            <div class="producto">🛒 Farmatodo: Crema Noche Colágeno · Bs 3.100</div>
+          </div>
+        </div>
+        <div class="guia-tip">
+          <strong>💡 Tips Aurora para Piel Mixta:</strong>
+          <p>La clave es tratar cada zona de forma diferente. No uses el mismo producto en toda la cara. El calor aumenta el sebo en zona T — en Venezuela, toca refrescarse con agua fresca a mediodía. Cambia tu toalla de cara cada 3 días.</p>
+        </div>
+        <div class="guia-evitar">
+          <strong>❌ Evita en piel mixta:</strong>
+          <ul><li>Un solo producto para toda la cara</li><li>Cremas muy densas en zona T</li><li>Exfoliar la cara completa</li><li>Jabones en barra</li><li>Ignorar las mejillas</li></ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- GUÍA PIEL SENSIBLE -->
+    <div class="guia-content" id="guia-sensible">
+      <div class="guia-box">
+        <h3>🌙 Guía Definitiva — Piel Sensible</h3>
+        <div class="guia-pasos">
+          <div class="guia-paso">
+            <div class="paso-num">🌅 Rutina de Mañana — Paso 1</div>
+            <h4>Limpieza Ultra Suave</h4>
+            <p>Solo agua fresca por la mañana si tu piel no necesita más. Si usas limpiador, que sea sin fragancia, sin sulfatos y sin colorantes. Golpecitos suaves, nunca frotes.</p>
+            <div class="producto">🛒 Farmatodo: Jabón de Glicerina Natural (sin fragancia) · Bs 2.900</div>
+          </div>
+          <div class="guia-paso">
+            <div class="paso-num">🌅 Rutina de Mañana — Paso 2</div>
+            <h4>Crema Calmante con Ceramidas</h4>
+            <p>Las ceramidas reparan la barrera dañada que causa la sensibilidad. Aplica en movimientos suaves hacia arriba. No masajees agresivamente. Un producto = una semana de prueba antes de agregar otro.</p>
+            <div class="producto">🛒 Farmatodo: NIVEA Sensitive (Ceramidas) · Bs 3.800</div>
+          </div>
+          <div class="guia-paso">
+            <div class="paso-num">🌅 Rutina de Mañana — Paso 3</div>
+            <h4>Protector Mineral FPS 50</h4>
+            <p>Busca protectores con Óxido de Zinc o Dióxido de Titanio (filtros minerales). Son menos irritantes que los químicos. Aplica 15 min antes de salir.</p>
+            <div class="producto">🛒 Farmatodo: Neutrogena Ultra Sheer FPS 50 · Bs 4.800</div>
+          </div>
+          <div class="guia-paso">
+            <div class="paso-num">🌙 Rutina de Noche — Paso 1</div>
+            <h4>Limpieza Doble Gentil</h4>
+            <p>Agua micelar sin alcohol para remover el protector (no frotes, presiona suavemente con algodón). Luego agua fresca. Para piel muy sensible esto puede ser suficiente.</p>
+            <div class="producto">🛒 Farmatodo: Jabón de Glicerina Natural · Bs 2.900</div>
+          </div>
+          <div class="guia-paso">
+            <div class="paso-num">🌙 Rutina de Noche — Paso 2</div>
+            <h4>Sérum Calmante (opcional)</h4>
+            <p>Solo si tu piel lo tolera. Busca ingredientes: Centella Asiatica, Aloe Vera, Pantenol o Bisabolol. Introduce UN sérum nuevo cada 2 semanas. Si hay reacción, suspende.</p>
+            <div class="producto">🛒 Farmatodo: Consulta con Daniela · WhatsApp</div>
+          </div>
+          <div class="guia-paso">
+            <div class="paso-num">🌙 Rutina de Noche — Paso 3</div>
+            <h4>Crema Nocturna Reparadora</h4>
+            <p>Sin fragancia, sin alcohol, sin colorantes. La crema con Colágeno y Ceramidas repara la barrera mientras duermes. Aplica generosamente en cara y cuello.</p>
+            <div class="producto">🛒 Farmatodo: Crema Noche Colágeno + Ceramidas · Bs 3.100</div>
+          </div>
+        </div>
+        <div class="guia-tip">
+          <strong>💡 Tips Aurora para Piel Sensible:</strong>
+          <p>Menos es más. Empieza con 3 productos máximo y agrega uno nuevo cada 2 semanas. Haz el "patch test": aplica el producto nuevo en el interior del codo por 24h antes de usar en cara. Evita el calor, el estrés y las mascarillas con ácidos. La piel sensible necesita calma, no tratamientos agresivos.</p>
+        </div>
+        <div class="guia-evitar">
+          <strong>❌ Evita en piel sensible:</strong>
+          <ul><li>Ácidos AHA/BHA al inicio</li><li>Retinol sin adaptación</li><li>Fragancias artificiales</li><li>Exfoliantes físicos (scrubs)</li><li>Agua muy caliente o muy fría</li><li>Muchos productos a la vez</li></ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FARMATODO -->
+<section class="farmatodo-section" id="farmatodo">
+  <div class="wrap">
+    <div class="ft-header reveal">
+      <span class="ft-badge">🛒 Farmatodo Venezuela</span>
+      <h2>Catálogo de Productos</h2>
+    </div>
+    <div class="prod-grid">
+      <div class="prod-card reveal">
+        <div class="prod-img"><img src="https://images.pexels.com/photos/3685530/pexels-photo-3685530.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop" alt="Jabón Glicerina" loading="lazy"/></div>
+        <div class="prod-body"><span class="prod-badge">Limpieza</span><h3>Jabón de Glicerina Natural</h3><p>pH neutro · Sin perfume · Piel seca y sensible</p><div class="prod-rating">★★★★★</div><div class="prod-price">Bs 2.900</div><div class="prod-store">📍 Farmatodo Venezuela</div></div>
+      </div>
+      <div class="prod-card reveal">
+        <div class="prod-img"><img src="https://images.pexels.com/photos/4465124/pexels-photo-4465124.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop" alt="Gel Pond's" loading="lazy"/></div>
+        <div class="prod-body"><span class="prod-badge">Limpieza</span><h3>Gel Limpiador Pond's</h3><p>Sin resecar · Piel mixta y grasa</p><div class="prod-rating">★★★★☆</div><div class="prod-price">Bs 3.200</div><div class="prod-store">📍 Farmatodo Venezuela</div></div>
+      </div>
+      <div class="prod-card reveal">
+        <div class="prod-img"><img src="https://images.pexels.com/photos/3762875/pexels-photo-3762875.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop" alt="Cicatricure" loading="lazy"/></div>
+        <div class="prod-body"><span class="prod-badge">Hidratación</span><h3>Ácido Hialurónico Cicatricure</h3><p>Rellena líneas · Textura ligera · Todas las pieles</p><div class="prod-rating">★★★★★</div><div class="prod-price">Bs 4.200</div><div class="prod-store">📍 Farmatodo Venezuela</div></div>
+      </div>
+      <div class="prod-card reveal">
+        <div class="prod-img"><img src="https://images.pexels.com/photos/4041392/pexels-photo-4041392.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop" alt="NIVEA" loading="lazy"/></div>
+        <div class="prod-body"><span class="prod-badge">Hidratación</span><h3>NIVEA Sensitive (Ceramidas)</h3><p>Sin fragancia · Calma · Piel sensible y mixta</p><div class="prod-rating">★★★★★</div><div class="prod-price">Bs 3.800</div><div class="prod-store">📍 Farmatodo Venezuela</div></div>
+      </div>
+      <div class="prod-card reveal">
+        <div class="prod-img"><img src="https://images.pexels.com/photos/4210780/pexels-photo-4210780.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop" alt="Anasol" loading="lazy"/></div>
+        <div class="prod-body"><span class="prod-badge">Protección</span><h3>Anasol FPS 50+ Toque Seco</h3><p>Sin residuo blanco · Oil-free · Piel grasa/mixta</p><div class="prod-rating">★★★★☆</div><div class="prod-price">Bs 3.500</div><div class="prod-store">📍 Farmatodo Venezuela</div></div>
+      </div>
+      <div class="prod-card reveal">
+        <div class="prod-img"><img src="https://images.pexels.com/photos/4041391/pexels-photo-4041391.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop" alt="Neutrogena" loading="lazy"/></div>
+        <div class="prod-body"><span class="prod-badge">Protección</span><h3>Neutrogena Ultra Sheer FPS 50</h3><p>Ultra ligero · No comedogénico · Uso diario</p><div class="prod-rating">★★★★★</div><div class="prod-price">Bs 4.800</div><div class="prod-store">📍 Farmatodo Venezuela</div></div>
+      </div>
+      <div class="prod-card reveal">
+        <div class="prod-img"><img src="https://images.pexels.com/photos/4065938/pexels-photo-4065938.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop" alt="Crema Noche" loading="lazy"/></div>
+        <div class="prod-body"><span class="prod-badge">Noche</span><h3>Crema Noche Colágeno + Ceramidas</h3><p>Repara barrera · Anti-arrugas · Piel seca/madura</p><div class="prod-rating">★★★★★</div><div class="prod-price">Bs 3.100</div><div class="prod-store">📍 Farmatodo Venezuela</div></div>
+      </div>
+      <div class="prod-card reveal">
+        <div class="prod-img"><img src="https://images.pexels.com/photos/3735598/pexels-photo-3735598.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop" alt="Sérum" loading="lazy"/></div>
+        <div class="prod-body"><span class="prod-badge">Noche</span><h3>Sérum Vitamina C L'Oreal</h3><p>Ilumina · Unifica tono · Antioxidante</p><div class="prod-rating">★★★★☆</div><div class="prod-price">Bs 5.200</div><div class="prod-store">📍 Farmatodo Venezuela</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUCIONES -->
+<section class="sol-section reveal">
+  <div class="sec-head"><span class="stag">Resumen rápido</span><h2>Soluciones por tipo de piel</h2><p>Un vistazo rápido a lo que necesita cada piel.</p></div>
+  <div class="wrap">
+    <div class="sol-grid">
+      <div class="sol-card"><div class="sol-icon">🌾</div><h3>Piel Seca</h3><ul><li>Jabón Glicerina (limpieza)</li><li>Ácido Hialurónico Cicatricure</li><li>Crema Colágeno + Ceramidas</li><li>Protector FPS 50 (crema)</li><li>Exfolia 1x semana máximo</li></ul></div>
+      <div class="sol-card"><div class="sol-icon">🍃</div><h3>Piel Grasa</h3><ul><li>Gel Limpiador Pond's</li><li>Ácido Hialurónico (gel)</li><li>Niacinamida 10% (sérum)</li><li>Anasol FPS 50 toque seco</li><li>Arcilla zona T (2x semana)</li></ul></div>
+      <div class="sol-card"><div class="sol-icon">🌸</div><h3>Piel Mixta</h3><ul><li>Gel Pond's (limpieza)</li><li>Gel zona T / Crema mejillas</li><li>Cicatricure + NIVEA Sensitive</li><li>Neutrogena Ultra Sheer</li><li>Mascarilla arcilla zona T</li></ul></div>
+      <div class="sol-card"><div class="sol-icon">🌙</div><h3>Piel Sensible</h3><ul><li>Jabón Glicerina sin fragancia</li><li>NIVEA Sensitive (Ceramidas)</li><li>Protector mineral FPS 50</li><li>Máximo 3 productos iniciales</li><li>Patch test antes de cada nuevo</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- RUTINA -->
+<section class="rutina-section">
+  <div class="sec-head reveal"><span class="stag">La rutina Aurora</span><h2>Mañana y noche. 5 minutos.</h2><p>La constancia hace la diferencia. Los resultados llegan en 4–8 semanas.</p></div>
+  <div class="wrap">
+    <div class="timeline reveal">
+      <div class="tl-item"><div class="tl-dot">🌅</div><div class="tl-lbl">AM · 5 min</div><h3>Mañana</h3><p>Limpieza → Hidratación → Protector FPS 50</p></div>
+      <div class="tl-item"><div class="tl-dot">🌙</div><div class="tl-lbl">PM · 7 min</div><h3>Noche</h3><p>Doble limpieza → Sérum → Crema nutritiva</p></div>
+      <div class="tl-item"><div class="tl-dot">📅</div><div class="tl-lbl">Semana 1-2</div><h3>Adaptación</h3><p>La piel puede reaccionar. Es normal. Mantén la constancia.</p></div>
+      <div class="tl-item"><div class="tl-dot">✨</div><div class="tl-lbl">Semana 4-8</div><h3>Resultados</h3><p>Piel más luminosa, unificada y menos reactiva. ¡Lo notarás!</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMULARIO WA -->
+<section class="form-section" id="guia-form">
+  <div class="wrap">
+    <div class="form-box reveal">
+      <div class="form-left">
+        <h2>💬 Habla con Daniela</h2>
+        <p>Recibe asesoría personalizada y tu rutina Aurora completa directamente por WhatsApp. Gratis. Sin compromiso.</p>
+      </div>
+      <div class="form-fields">
+        <input type="text" id="nombre" placeholder="Tu nombre completo"/>
+        <input type="text" id="edad" placeholder="Tu edad"/>
+        <select id="tipoPiel">
+          <option value="">-- Tu tipo de piel --</option>
+          <option value="Piel Seca">🌾 Piel Seca</option>
+          <option value="Piel Grasa">🍃 Piel Grasa</option>
+          <option value="Piel Mixta">🌸 Piel Mixta</option>
+          <option value="Piel Sensible">🌙 Piel Sensible</option>
+        </select>
+        <select id="objetivo">
+          <option value="">-- Tu objetivo principal --</option>
+          <option value="Hidratación">💧 Mejorar hidratación</option>
+          <option value="Manchas">☀️ Reducir manchas</option>
+          <option value="Arrugas">⏳ Anti-envejecimiento</option>
+          <option value="Acné">🌿 Controlar acné</option>
+          <option value="Rojeces">🌙 Calmar rojeces</option>
+        </select>
+        <button class="btn-send" id="btnWA">💬 Enviar a WhatsApp de Daniela</button>
+        <div id="feedback"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contacto" id="contacto">
+  <div class="wrap">
+    <h2>📞 Asesoría con Daniela</h2>
+    <p>Especialista en piel sensible · Responde en minutos</p>
+    <a class="btn-wa-big" href="https://wa.me/584248822241?text=Hola%20Daniela%2C%20vi%20Aurora%20Skincare%20y%20quiero%20mi%20asesor%C3%ADa">💬 WhatsApp — 0424-8882241</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Aurora Skincare · Guía digital para piel sensible · Productos en <strong>Farmatodo Venezuela</strong> · Diseñado con 🌿 por Aurora</p>
+</footer>
+
+<a class="wa-float" href="https://wa.me/584248822241">💬 Daniela</a>
+
+<!-- MODAL TIPOS DE PIEL -->
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose">✕</button>
+    <div id="modalContent"></div>
+    <button class="modal-btn" id="modalCerrar">Cerrar</button>
+  </div>
+</div>
+
+<script>
+const guiasModal = {
+  seca:{titulo:"🌾 Piel Seca — Tu Rutina",contenido:`<p style="color:#7A5A46;margin-bottom:1rem">Tirantez, descamación y falta de luminosidad. Necesitas hidratación intensa y barrera reforzada.</p><ul><li><strong>Mañana:</strong> Jabón Glicerina → Cicatricure Ácido Hialurónico → Neutrogena FPS 50</li><li><strong>Noche:</strong> Jabón Glicerina → Sérum Vitamina C → Crema Colágeno + Ceramidas</li><li><strong>2x semana:</strong> Exfoliante suave láctico (no físico)</li></ul><div class="modal-tip">💡 Aplica la crema con piel húmeda para sellar la hidratación. Nunca agua caliente.</div>`},
+  grasa:{titulo:"🍃 Piel Grasa — Tu Rutina",contenido:`<p style="color:#7A5A46;margin-bottom:1rem">Brillo excesivo y poros visibles. Controla el sebo sin deshidratar.</p><ul><li><strong>Mañana:</strong> Gel Pond's → Cicatricure (gel) → Anasol FPS 50 toque seco</li><li><strong>Noche:</strong> Gel Pond's → Niacinamida → Hidratante ligero</li><li><strong>2x semana:</strong> Mascarilla arcilla en zona T</li></ul><div class="modal-tip">💡 ¡No omitas hidratar! Sin hidratación, la piel produce más sebo. Usa gel ligero.</div>`},
+  mixta:{titulo:"🌸 Piel Mixta — Tu Rutina",contenido:`<p style="color:#7A5A46;margin-bottom:1rem">Zona T grasa y mejillas secas. La clave es tratar cada zona diferente.</p><ul><li><strong>Mañana:</strong> Gel Pond's → Gel zona T + Crema mejillas → Neutrogena FPS 50</li><li><strong>Noche:</strong> Doble limpieza → Arcilla zona T (2x sem) → Crema en mejillas</li></ul><div class="modal-tip">💡 Usa productos diferentes para zona T y mejillas. No apliques lo mismo en toda la cara.</div>`},
+  sensible:{titulo:"🌙 Piel Sensible — Tu Rutina",contenido:`<p style="color:#7A5A46;margin-bottom:1rem">Rojeces, ardor y reactividad. Menos productos = menos riesgo. La calma es clave.</p><ul><li><strong>Mañana:</strong> Jabón Glicerina (sin fragancia) → NIVEA Sensitive → Protector mineral FPS 50</li><li><strong>Noche:</strong> Agua micelar → Jabón Glicerina → Crema Colágeno + Ceramidas</li></ul><div class="modal-tip">💡 Máximo 3 productos al inicio. Patch test en codo por 24h antes de usar en cara. Un producto nuevo cada 2 semanas.</div>`}
+};
+
+// Modal tipos de piel
+const modal=document.getElementById('modal');
+document.querySelectorAll('.piel-card').forEach(c=>{
+  c.addEventListener('click',()=>{
+    const tipo=c.dataset.tipo;
+    if(guiasModal[tipo]){
+      document.getElementById('modalContent').innerHTML=`<h2>${guiasModal[tipo].titulo}</h2>${guiasModal[tipo].contenido}`;
+      modal.classList.add('open');
+    }
+  });
+});
+document.getElementById('modalClose').onclick=()=>modal.classList.remove('open');
+document.getElementById('modalCerrar').onclick=()=>modal.classList.remove('open');
+modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open');});
+
+// Tabs guías
+document.querySelectorAll('.gtab').forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    document.querySelectorAll('.gtab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.guia-content').forEach(g=>g.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('guia-'+tab.dataset.guia).classList.add('active');
+  });
+});
+
+// Formulario → WhatsApp
+document.getElementById('btnWA').addEventListener('click',()=>{
+  const nombre=document.getElementById('nombre').value.trim();
+  const edad=document.getElementById('edad').value.trim();
+  const tipo=document.getElementById('tipoPiel').value;
+  const objetivo=document.getElementById('objetivo').value;
+  const fb=document.getElementById('feedback');
+  if(!nombre||!tipo){fb.innerHTML='❌ Ingresa tu nombre y tipo de piel';return;}
+  const msg=`Hola Daniela 👋, soy ${nombre}${edad?' ('+edad+' años)':''}. Tengo ${tipo} y mi objetivo es: ${objetivo||'mejorar mi piel'}. Vi Aurora Skincare y quiero mi rutina personalizada con productos Farmatodo. ¿Me puedes ayudar? 🌿`;
+  window.open(`https://wa.me/584248822241?text=${encodeURIComponent(msg)}`,'_blank');
+  fb.innerHTML='✅ Abriendo WhatsApp con Daniela...';
+});
+
+// Hamburger
+const ham=document.getElementById('hamburger'),panel=document.getElementById('mobilePanel');
+ham.addEventListener('click',()=>{panel.style.right=panel.style.right==='0px'||panel.style.right==='0%'?'-100%':'0%';});
+document.getElementById('mobileClose').addEventListener('click',()=>{panel.style.right='-100%';});
+panel.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{panel.style.right='-100%';}));
+
+// Scroll reveal
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('revealed');obs.unobserve(e.target);}});},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
